@@ -1,7 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Build Status](https://dev.azure.com/MaxThom/MasterThesis/_apis/build/status/ModuleTelemetry?branchName=main)](https://dev.azure.com/MaxThom/MasterThesis/_build/latest?definitionId=1&branchName=main)
-
 # Introduction 
 This is a template project in C# to build IoT applications using the Azure IotHub and Azure IotEdge framework.
 It provides a startup with default console logging, configuration files, dependency injection and more.
