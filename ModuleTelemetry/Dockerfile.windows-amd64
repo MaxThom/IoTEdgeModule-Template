@@ -1,0 +1,19 @@
+FROM mcr.microsoft.com/dotnet/sdk:5.0-nanoserver-1809 AS build-env
+WORKDIR /app
+
+COPY ./ModuleTelemetry/*.csproj ./ModuleTelemetry/
+COPY ./ModuleTelemetry.IotHub/*.csproj ./ModuleTelemetry.IotHub/
+COPY ./ModuleTelemetry.Broker/*.csproj ./ModuleTelemetry.Broker/
+COPY ./ModuleTelemetry.Core/*.csproj ./ModuleTelemetry.Core/
+RUN dotnet restore ./ModuleTelemetry/ModuleTelemetry.csproj
+RUN dotnet restore ./ModuleTelemetry.IotHub/ModuleTelemetry.IotHub.csproj
+RUN dotnet restore ./ModuleTelemetry.Broker/ModuleTelemetry.Broker.csproj
+RUN dotnet restore ./ModuleTelemetry.Core/ModuleTelemetry.Core.csproj
+
+COPY . ./
+RUN dotnet publish ./ModuleTelemetry/ModuleTelemetry.csproj -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/runtime:5.0-nanoserver-1809
+WORKDIR /app
+COPY --from=build-env /app/out ./
+ENTRYPOINT ["dotnet", "ModuleTelemetry.dll"]

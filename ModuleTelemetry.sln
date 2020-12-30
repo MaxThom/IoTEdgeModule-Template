@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{34036844-64E7-43A5-9151-4AD90E180989}") = "EdgeModule", "EdgeModule\EdgeModule.iotedgeproj", "{35CC5DD6-625E-4E02-8BDF-E6F618154891}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleTelemetry", "ModuleTelemetry\ModuleTelemetry.csproj", "{3EA8F1CD-6D4A-422A-A168-585DFB9E677A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE7A0F2C-7850-46CD-B893-D3F10F362AD1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BEE2EB71-1A1B-42C8-81B0-0915CEB7E071}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleTelemetry.IotHub", "ModuleTelemetry.IotHub\ModuleTelemetry.IotHub.csproj", "{CEE19DC3-3C8A-4036-8C71-D4B63DA1A281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{53837D31-7B1C-43CA-A05D-0FD39AD2F4AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleTelemetry.Test", "ModuleTelemetry.Test\ModuleTelemetry.Test.csproj", "{57A54E63-46AE-4861-AC91-C3D19A895092}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleTelemetry.IotHub.Test", "ModuleTelemetry.IotHub.Test\ModuleTelemetry.IotHub.Test.csproj", "{776AD3F2-C5DF-4862-929A-90EE39D11F99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleTelemetry.Core", "ModuleTelemetry.Core\ModuleTelemetry.Core.csproj", "{1B4A5C75-2EC1-4E27-89FA-9D570D1CD77C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTelemetry.Broker", "ModuleTelemetry.Broker\ModuleTelemetry.Broker.csproj", "{F6F07BF2-9A1B-407E-BDEA-6B1D0C344023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTelemetry.Broker.Test", "ModuleTelemetry.Broker.Test\ModuleTelemetry.Broker.Test.csproj", "{922A119F-5CCD-4F5F-AB34-2D355340FEDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35CC5DD6-625E-4E02-8BDF-E6F618154891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CC5DD6-625E-4E02-8BDF-E6F618154891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CC5DD6-625E-4E02-8BDF-E6F618154891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CC5DD6-625E-4E02-8BDF-E6F618154891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA8F1CD-6D4A-422A-A168-585DFB9E677A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA8F1CD-6D4A-422A-A168-585DFB9E677A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA8F1CD-6D4A-422A-A168-585DFB9E677A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA8F1CD-6D4A-422A-A168-585DFB9E677A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE19DC3-3C8A-4036-8C71-D4B63DA1A281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE19DC3-3C8A-4036-8C71-D4B63DA1A281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE19DC3-3C8A-4036-8C71-D4B63DA1A281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE19DC3-3C8A-4036-8C71-D4B63DA1A281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A54E63-46AE-4861-AC91-C3D19A895092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A54E63-46AE-4861-AC91-C3D19A895092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A54E63-46AE-4861-AC91-C3D19A895092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A54E63-46AE-4861-AC91-C3D19A895092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776AD3F2-C5DF-4862-929A-90EE39D11F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776AD3F2-C5DF-4862-929A-90EE39D11F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776AD3F2-C5DF-4862-929A-90EE39D11F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776AD3F2-C5DF-4862-929A-90EE39D11F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4A5C75-2EC1-4E27-89FA-9D570D1CD77C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4A5C75-2EC1-4E27-89FA-9D570D1CD77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4A5C75-2EC1-4E27-89FA-9D570D1CD77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4A5C75-2EC1-4E27-89FA-9D570D1CD77C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F07BF2-9A1B-407E-BDEA-6B1D0C344023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F07BF2-9A1B-407E-BDEA-6B1D0C344023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F07BF2-9A1B-407E-BDEA-6B1D0C344023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F07BF2-9A1B-407E-BDEA-6B1D0C344023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922A119F-5CCD-4F5F-AB34-2D355340FEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922A119F-5CCD-4F5F-AB34-2D355340FEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922A119F-5CCD-4F5F-AB34-2D355340FEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922A119F-5CCD-4F5F-AB34-2D355340FEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35CC5DD6-625E-4E02-8BDF-E6F618154891} = {BEE2EB71-1A1B-42C8-81B0-0915CEB7E071}
+		{3EA8F1CD-6D4A-422A-A168-585DFB9E677A} = {BEE2EB71-1A1B-42C8-81B0-0915CEB7E071}
+		{CEE19DC3-3C8A-4036-8C71-D4B63DA1A281} = {BEE2EB71-1A1B-42C8-81B0-0915CEB7E071}
+		{57A54E63-46AE-4861-AC91-C3D19A895092} = {53837D31-7B1C-43CA-A05D-0FD39AD2F4AA}
+		{776AD3F2-C5DF-4862-929A-90EE39D11F99} = {53837D31-7B1C-43CA-A05D-0FD39AD2F4AA}
+		{1B4A5C75-2EC1-4E27-89FA-9D570D1CD77C} = {BEE2EB71-1A1B-42C8-81B0-0915CEB7E071}
+		{F6F07BF2-9A1B-407E-BDEA-6B1D0C344023} = {BEE2EB71-1A1B-42C8-81B0-0915CEB7E071}
+		{922A119F-5CCD-4F5F-AB34-2D355340FEDD} = {53837D31-7B1C-43CA-A05D-0FD39AD2F4AA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B12F13B-BB44-4198-9446-3CC8B0ACFED7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+FROM mcr.microsoft.com/dotnet/runtime:5.0-buster-slim-arm32v7 AS base
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends unzip procps && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN useradd -ms /bin/bash moduleuser
+USER moduleuser
+RUN curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l ~/vsdbg
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim-arm32v7 AS build-env
+WORKDIR /app
+
+COPY ./ModuleTelemetry/*.csproj ./ModuleTelemetry/
+COPY ./ModuleTelemetry.IotHub/*.csproj ./ModuleTelemetry.IotHub/
+COPY ./ModuleTelemetry.Broker/*.csproj ./ModuleTelemetry.Broker/
+COPY ./ModuleTelemetry.Core/*.csproj ./ModuleTelemetry.Core/
+RUN dotnet restore ./ModuleTelemetry/ModuleTelemetry.csproj
+RUN dotnet restore ./ModuleTelemetry.IotHub/ModuleTelemetry.IotHub.csproj
+RUN dotnet restore ./ModuleTelemetry.Broker/ModuleTelemetry.Broker.csproj
+RUN dotnet restore ./ModuleTelemetry.Core/ModuleTelemetry.Core.csproj
+
+COPY . ./
+RUN dotnet publish ./ModuleTelemetry/ModuleTelemetry.csproj -c Debug -o out
+
+FROM base
+WORKDIR /app
+COPY --from=build-env /app/out ./
+
+ENTRYPOINT ["dotnet", "ModuleTelemetry.dll"]
