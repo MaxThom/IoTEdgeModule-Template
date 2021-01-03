@@ -23,3 +23,6 @@ Install the tools :
 
 Documentation :
 - https://docs.microsoft.com/en-us/azure/iot-edge/?view=iotedge-2018-06
+- https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml
+
+You must add a variable group for the pipeline with variables for your container repository login and password so they are correctly replace in the deployment.template.json
