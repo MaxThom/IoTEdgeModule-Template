@@ -4,7 +4,10 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-
+  
+variables:
+  - group: EdgeModuleDeployment
+  
 steps:
 - task: DotNetCoreCLI@2
   displayName: 'Unit Test module'
