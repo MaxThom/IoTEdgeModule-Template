@@ -11,8 +11,8 @@
             "loggingOptions": "",
             "registryCredentials": {
               "registry": {
-                "username": "$CONTAINER_REGISTRY_USERNAME_registry",
-                "password": "$CONTAINER_REGISTRY_PASSWORD_registry",
+                "username": "${CONTAINER_REGISTRY_USERNAME_registry}",
+                "password": "${CONTAINER_REGISTRY_PASSWORD_registry}",
                 "address": "docker.io"
               }
             }
